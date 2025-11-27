@@ -1,0 +1,20 @@
+[project]
+name = "computer-vision-cas-hslu-2025"
+version = "0.1.0"
+description = "A hands-on course on computer vision."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "matplotlib>=3.9.4",
+    "numpy>=2.0.2",
+    "pandas>=2.3.3",
+    "pytest>=8.3.3",
+    "pyyaml>=6.0.2",
+    "ipykernel>=6.29.5",
+    "torch>=2.4.1",
+    "torchvision>=0.19.1",
+    "tqdm>=4.67.1",
+    "ipympl>=0.9.8",
+    "huggingface-hub>=1.1.5",
+    "ultralytics>=8.3.233",
+]

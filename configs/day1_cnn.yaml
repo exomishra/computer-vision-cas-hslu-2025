@@ -1,0 +1,11 @@
+name: day1_cnn
+dataset: mnist
+model: simple_cnn
+batch_size: 64
+num_workers: 2
+learning_rate: 0.001
+epochs: 5
+allow_gpu: false
+augment: false
+limit_train_samples: 2048
+limit_val_samples: 512
