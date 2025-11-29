@@ -1,6 +1,6 @@
 # Course on Computer Vision (CAS 2025) 
 
-This repository contains content for a two-day course on the landscape of today’s computer vision — from CNNs to diffusion and beyond. This course was delivered as part of the Certificate of Advanced Studies (CAS) program at the Lucerne University of Applied Sciences (Hochschule Luzern HSLU) on 14–15 November 2025. 
+This repository contains content for a two-day course on the landscape of today’s computer vision — from CNNs to diffusion and beyond. This course was delivered as part of the Certificate of Advanced Studies (CAS) program at the Lucerne University of Applied Sciences (Hochschule Luzern HSLU) in November 2025. 
 
 This course allows participants to get a hands-on, practical introduction to how machines "see" the world. We begin from early concepts of vision to the multimodal vision-language models. On this journey, we cover discriminative models (CNN-era) to generative models (diffusion, vision transformer).
 
@@ -17,12 +17,12 @@ This course allows participants to get a hands-on, practical introduction to how
 ## 🔍 What You’ll Learn
 
 - Evolution of computer vision and core problem types
-- CNNs and UNETs for image understanding
-- Object detection and segmentation (toward SAM)
-- Data augmentation and transfer learning techniques
-- Generative models and diffusion-based image synthesis
-- Vision Transformers (ViT) and multimodal CV systems (CLIP, BLIP)
-- Overview of current research trends and foundation models
+- CNNs for image classification
+- Object detection 
+- Semantic segmentation
+- Vision Generative models landscape
+- Autoregressive model
+- GANs, VAEs
 
 ---
 
@@ -38,12 +38,13 @@ This course allows participants to get a hands-on, practical introduction to how
 | Object Detection (YOLOv8) | [link](https://docs.google.com/presentation/d/1ufM6Uekk-HYiQcZ2VyTMlOZXm_EnYa6Gw4vZ45FujdM/edit?usp=share_link) | [notebooks/day1/03_object_detection.ipynb](notebooks/day1/03_object_detection.ipynb) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/exomishra/computer-vision-cas-hslu-2025/blob/main/notebooks/day1/03_object_detection.ipynb) |
 | Semantic Segmentation | [link](https://docs.google.com/presentation/d/1It3G76HavOVgkxd6axaW618UblgahuG_MeW8J8XUOOo/edit?usp=share_link) | [notebooks/day1/04_semantic_segmentation.ipynb](notebooks/day1/04_semantic_segmentation.ipynb) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/exomishra/computer-vision-cas-hslu-2025/blob/main/notebooks/day1/04_semantic_segmentation.ipynb) |
 
-**Day 2 – Diffusion, ViTs, and multimodal CV**
+**Day 2 – Generative Models**
 
 | Topic | Slides | Notebook | Colab |
 | --- | --- | --- | --- |
-| Diffusion Primer | [link]() | [notebooks/day2/01_diffusion.ipynb](notebooks/day2/01_diffusion.ipynb) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/exomishra/computer-vision-cas-hslu-2025/blob/main/notebooks/day2/01_diffusion.ipynb) |
-| Vision Transformers | [link]() | [notebooks/day2/02_vit.ipynb](notebooks/day2/02_vit.ipynb) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/exomishra/computer-vision-cas-hslu-2025/blob/main/notebooks/day2/02_vit.ipynb) |
+| PixelCNN & Autoregressive Models | [link](https://docs.google.com/presentation/d/1jouvCv8npiLuXdCqhtwizKnAyEeU788z3b1dRxfQIu4/edit?usp=sharing) | [notebooks/day2/01_pixelcnn.ipynb](notebooks/day2/01_pixelcnn.ipynb) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/exomishra/computer-vision-cas-hslu-2025/blob/main/notebooks/day2/01_pixelcnn.ipynb) |
+| Variational Autoencoders | [link](https://docs.google.com/presentation/d/1Rtx3-bDWTpo8PhPxKbeLfd0mh_GRsMZSwD7-pXcnl_I/edit?usp=sharing) | [notebooks/day2/02_vae.ipynb](notebooks/day2/02_vae.ipynb) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/exomishra/computer-vision-cas-hslu-2025/blob/main/notebooks/day2/02_vae.ipynb) |
+| Generative Adversarial Networks | [link](https://docs.google.com/presentation/d/1mfI9AXM4m9He40_mAJ-Z1bZU0dJr3HScsj4rQNahrZc/edit?usp=sharing) | [notebooks/day2/03_gans.ipynb](notebooks/day2/03_gans.ipynb) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/exomishra/computer-vision-cas-hslu-2025/blob/main/notebooks/day2/03_gans.ipynb) |
 
 ---
 
@@ -140,16 +141,11 @@ If you use these materials in your research or teaching, please cite as:
 ├── pyproject.toml
 ├── uv.lock
 ├── configs/
-│   ├── day1_cnn.yaml
-│   ├── day1_detection_segmentation.yaml
-│   └── day1_transfer_learning.yaml
+│   └── day1_cnn.yaml
 ├── data/
-│   ├── cifar-10-batches-py/
-│   ├── cifar10/
-│   ├── FashionMNIST/
-│   ├── MNIST/
-│   ├── pretrained/
-│   └── samples/
+│   ├── face_samples/
+│   └── MNIST/
+│       └── raw/ (idx file dumps)
 ├── notebooks/
 │   ├── day1/
 │   │   ├── 00_setup_test.ipynb
@@ -158,21 +154,21 @@ If you use these materials in your research or teaching, please cite as:
 │   │   ├── 03_object_detection.ipynb
 │   │   └── 04_semantic_segmentation.ipynb
 │   └── day2/
-│       ├── 01_diffusion.ipynb
-│       ├── 02_vit.ipynb
-│       ├── 03_multimodal_clip_blip.ipynb
+│       ├── 01_pixelcnn.ipynb
+│       ├── 02_vae.ipynb
+│       ├── 03_gans.ipynb
 │       └── 04_research_trends.ipynb
 ├── slides/
 │   └── slides.md
 └── src/
     └── cvcourse/
-        ├── __init__.py
-        ├── config.py
-        ├── data/
-        ├── models/
-        ├── training/
-        ├── utils/
-        └── viz/
+  ├── __init__.py
+  ├── config.py
+  ├── data/
+  ├── models/
+  ├── training/
+  ├── utils/
+  └── viz/
 
 ```
 

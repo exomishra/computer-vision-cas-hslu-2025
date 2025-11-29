@@ -17,4 +17,7 @@ dependencies = [
     "ipympl>=0.9.8",
     "huggingface-hub>=1.1.5",
     "ultralytics>=8.3.233",
+    "diffusers>=0.35.2",
+    "accelerate>=1.2.1",
+    "onnxruntime<1.20",
 ]
